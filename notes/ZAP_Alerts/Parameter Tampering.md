@@ -1,0 +1,38 @@
+
+# Parameter Tampering
+
+**ID:** 40008
+**Risk Level:** Not specified
+**CWE ID:** 472
+**WASC ID:** 20
+**Attack Strength:** DEFAULT
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Parameter Tampering"
+alertid: 40008
+alertindex: 4000800
+alerttype: "Active"
+alertcount: 1
+status: release
+type: alert
+risk: Medium
+solution: "Identify the cause of the error and fix it.  Do not trust client side input and enforce a tight check in the server side.  Besides, catch the exception properly.  Use a generic 500 error page for internal server error."
+other: ""
+cwe: 472
+wasc: 20
+alerttags: 
+  - OWASP_2017_A01
+  - OWASP_2021_A04
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrules/src/main/java/org/zaproxy/zap/extension/ascanrules/ParameterTamperScanRule.java
+linktext: "org/zaproxy/zap/extension/ascanrules/ParameterTamperScanRule.java"
+---
+Parameter manipulation caused an error page or Java stack trace to be displayed.  This indicated lack of exception handling and potential areas for further exploit.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

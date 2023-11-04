@@ -1,0 +1,22 @@
+
+# Session Fixation
+
+**ID:** 40013
+**Risk Level:** High
+**CWE ID:** 384
+**WASC ID:** 37
+**Attack Strength:** DEFAULT
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+Session Fixation may be possible. If this issue occurs with a login URL (where the user authenticates themselves to the application), then the URL may be given by an attacker, along with a fixed session id, to a victim, in order to later assume the identity of the victim using the given session id. If the issue occurs with a non-login page, the URL and fixed session id may only be used by an attacker to track an unauthenticated user's actions. If the vulnerability occurs on a cookie field or a form field (POST parameter) rather than on a URL (GET) parameter, then some other vulnerability may also be required in order to set the cookie field on the victim's browser, to allow the vulnerability to be exploited.
+
+## Solution
+1) Prevent the attacker from gaining a session id by enforcing strict session ids, and by only allocating session ids upon successful authentication to the application. 2) The server should always create a new session id upon authentication, regardless of whether a session is already in place. 3) Bind the session id to some identifiable client attribute combination, such as IP address, SSL client certificate. 4) Sessions, when destroyed, must be destroyed on the server, as well as on the client. 5) Implement a logout mechanism which will destroy all previous sessions for the client. 6) Implement absolute session timeouts. 7)Switch from a URL based to a cookie or form based session id implementation, as the latter typically require additional vulnerabilities, in order to be exploitable by an attacker 
+
+## References
+https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A2-Broken_Authentication
+https://owasp.org/www-community/attacks/Session_fixation
+http://www.acros.si/papers/session_fixation.pdf
+http://www.technicalinfo.net/papers/WebBasedSessionManagement.html
+https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrulesBeta/src/main/java/org/zaproxy/zap/extension/ascanrulesBeta/SessionFixationScanRule.java

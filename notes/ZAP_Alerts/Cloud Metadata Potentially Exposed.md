@@ -1,0 +1,39 @@
+
+# Cloud Metadata Potentially Exposed
+
+**ID:** 90034
+**Risk Level:** Not specified
+**CWE ID:** 0
+**WASC ID:** 0
+**Attack Strength:** DEFAULT
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Cloud Metadata Potentially Exposed"
+alertid: 90034
+alertindex: 9003400
+alerttype: "Active"
+alertcount: 1
+status: release
+type: alert
+risk: High
+solution: "Do not trust any user data in NGINX configs. In this case it is probably the use of the $host variable which is set from the 'Host' header and can be controlled by an attacker."
+references:
+   - https://www.nginx.com/blog/trust-no-one-perils-of-trusting-user-input/
+other: "Based on the successful response status code cloud metadata may have been returned in the response. Check the response data to see if any cloud metadata has been returned. The meta data returned can include information that would allow an attacker to completely compromise the system."
+alerttags: 
+  - OWASP_2017_A06
+  - OWASP_2021_A05
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrules/src/main/java/org/zaproxy/zap/extension/ascanrules/CloudMetadataScanRule.java
+linktext: "org/zaproxy/zap/extension/ascanrules/CloudMetadataScanRule.java"
+---
+The Cloud Metadata Attack attempts to abuse a misconfigured NGINX server in order to access the instance metadata maintained by cloud service providers such as AWS, GCP and Azure.
+All of these providers provide metadata via an internal unroutable IP address '169.254.169.254' - this can be exposed by incorrectly configured NGINX servers and accessed by using this IP address in the Host header field.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

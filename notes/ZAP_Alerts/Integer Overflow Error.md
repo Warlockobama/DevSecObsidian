@@ -1,0 +1,44 @@
+
+# Integer Overflow Error
+
+**ID:** 30003
+**Risk Level:** Not specified
+**CWE ID:** 190
+**WASC ID:** 3
+**Attack Strength:** DEFAULT
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Integer Overflow Error"
+alertid: 30003
+alertindex: 3000300
+alerttype: "Active"
+alertcount: 1
+status: beta
+type: alert
+risk: Medium
+solution: "In order to prevent overflows and divide by 0 (zero) errors in the application, please rewrite the backend program, checking if the values of integers being processed are within the application's allowed range. This will require a recompilation of the backend executable."
+references:
+   - https://en.wikipedia.org/wiki/Integer_overflow
+   - https://cwe.mitre.org/data/definitions/190.html
+   - http://projects.webappsec.org/w/page/13246946/Integer%20Overflows
+other: ""
+cwe: 190
+wasc: 3
+techtags: 
+  - Language.C
+alerttags: 
+  - OWASP_2017_A01
+  - OWASP_2021_A03
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrulesBeta/src/main/java/org/zaproxy/zap/extension/ascanrulesBeta/IntegerOverflowScanRule.java
+linktext: "org/zaproxy/zap/extension/ascanrulesBeta/IntegerOverflowScanRule.java"
+---
+An integer overflow condition exists when an integer used in a compiled program extends beyond the range limits and has not been properly checked from the input stream.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

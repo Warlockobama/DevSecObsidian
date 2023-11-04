@@ -1,0 +1,37 @@
+
+# Vulnerable JS Library (Powered by Retire.js)
+
+**ID:** 10003
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Vulnerable JS Library"
+alertid: 10003
+alertindex: 1000300
+alerttype: "Passive"
+alertcount: 1
+status: release
+type: alert
+risk: Medium
+solution: "Please upgrade to the latest version of ExampleLibrary."
+other: ""
+cwe: 829
+alerttags: 
+  - OWASP_2017_A09
+  - OWASP_2021_A06
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/retire/src/main/java/org/zaproxy/addon/retire/RetireScanRule.java
+linktext: "org/zaproxy/addon/retire/RetireScanRule.java"
+---
+The identified library ExampleLibrary, version x.y.z is vulnerable.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

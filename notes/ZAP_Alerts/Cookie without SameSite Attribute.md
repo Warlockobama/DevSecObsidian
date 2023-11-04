@@ -1,0 +1,41 @@
+
+# Cookie without SameSite Attribute
+
+**ID:** 10054
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Cookie without SameSite Attribute"
+alertid: 10054
+alertindex: 1005400
+alerttype: "Passive"
+alertcount: 1
+status: release
+type: alert
+risk: Low
+solution: "Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies."
+references:
+   - https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site
+other: ""
+cwe: 1275
+wasc: 13
+alerttags: 
+  - OWASP_2017_A05
+  - OWASP_2021_A01
+  - WSTG-v42-SESS-02
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrules/src/main/java/org/zaproxy/zap/extension/pscanrules/CookieSameSiteScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrules/CookieSameSiteScanRule.java"
+---
+A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

@@ -1,0 +1,42 @@
+
+# Username Hash Found
+
+**ID:** 10057
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Username Hash Found"
+alertid: 10057
+alertindex: 1005700
+alerttype: "Passive"
+alertcount: 1
+status: release
+type: alert
+risk: Informational
+solution: "Use per user or session indirect object references (create a temporary mapping at time of use). Or, ensure that each use of a direct object reference is tied to an authorization check to ensure the user is authorized for the requested object. "
+references:
+   - https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References.html
+other: "The hash was an SHA1, with value: d033e22ae348aeb5660fc2140aec35850c4da997 "
+cwe: 284
+wasc: 2
+alerttags: 
+  - CUSTOM_PAYLOADS
+  - OWASP_2017_A05
+  - OWASP_2021_A01
+  - WSTG-v42-ATHZ-04
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrules/src/main/java/org/zaproxy/zap/extension/pscanrules/UsernameIdorScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrules/UsernameIdorScanRule.java"
+---
+A hash of a username (admin) was found in the response. This may indicate that the application is subject to an Insecure Direct Object Reference (IDOR) vulnerability. Manual testing will be required to see if this discovery can be abused.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

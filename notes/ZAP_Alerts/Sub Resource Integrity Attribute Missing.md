@@ -1,0 +1,40 @@
+
+# Sub Resource Integrity Attribute Missing
+
+**ID:** 90003
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Sub Resource Integrity Attribute Missing"
+alertid: 90003
+alertindex: 9000300
+alerttype: "Passive"
+alertcount: 1
+status: beta
+type: alert
+risk: Medium
+solution: "Provide a valid integrity attribute to the tag."
+references:
+   - https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
+other: "The following hash was calculated (using base64 encoding of the output of the hash algorithm: SHA-384) for the script in question sha384-PJww2fZl501RXIQpYNSkUcg6ASX9Pec5LXs3IxrxDHLqWK7fzfiaV2W/kCr5Ps8G"
+cwe: 345
+wasc: 15
+alerttags: 
+  - OWASP_2017_A06
+  - OWASP_2021_A05
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrulesBeta/src/main/java/org/zaproxy/zap/extension/pscanrulesBeta/SubResourceIntegrityAttributeScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrulesBeta/SubResourceIntegrityAttributeScanRule.java"
+---
+The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content. 
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

@@ -1,0 +1,36 @@
+
+# HTTPS to HTTP Insecure Transition in Form Post
+
+**ID:** 10042
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "HTTPS to HTTP Insecure Transition in Form Post"
+alertid: 10042
+alertindex: 1004200
+alerttype: "Passive"
+alertcount: 1
+status: release
+type: alert
+solution: "Ensure sensitive data is only sent over secured HTTPS channels."
+other: ""
+alerttags: 
+  - OWASP_2017_A06
+  - OWASP_2021_A02
+  - WSTG-v42-CRYP-03
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrules/src/main/java/org/zaproxy/zap/extension/pscanrules/InsecureFormPostScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrules/InsecureFormPostScanRule.java"
+---
+This check identifies secure HTTPS pages that host insecure HTTP forms. The issue is that a secure page is transitioning to an insecure page when data is uploaded through a form. The user may think they're submitting data to a secure page when in fact they are not.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

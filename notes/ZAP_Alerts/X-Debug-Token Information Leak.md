@@ -1,0 +1,42 @@
+
+# X-Debug-Token Information Leak
+
+**ID:** 10056
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "X-Debug-Token Information Leak"
+alertid: 10056
+alertindex: 1005600
+alerttype: "Passive"
+alertcount: 1
+status: release
+type: alert
+risk: Low
+solution: "Limit access to Symfony's Profiler, either via authentication/authorization or limiting inclusion of the header to specific clients (by IP, etc.)."
+references:
+   - https://symfony.com/doc/current/cookbook/profiler/profiling_data.html
+   - https://symfony.com/blog/new-in-symfony-2-4-quicker-access-to-the-profiler-when-working-on-an-api
+other: "By accessing a URL in the form http://target_host/_profiler/token_value (i.e.: http://example.com/_profiler_/123ab4), you may gain access to the profiler and further leaked information."
+cwe: 200
+wasc: 13
+alerttags: 
+  - OWASP_2017_A03
+  - OWASP_2021_A01
+  - WSTG-v42-ERRH-01
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrules/src/main/java/org/zaproxy/zap/extension/pscanrules/XDebugTokenScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrules/XDebugTokenScanRule.java"
+---
+The response contained an X-Debug-Token or X-Debug-Token-Link header. This indicates that Symfony's Profiler may be in use and exposing sensitive data.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

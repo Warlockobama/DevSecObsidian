@@ -1,0 +1,41 @@
+
+# Source Code Disclosure - Git 
+
+**ID:** 41
+**Risk Level:** Not specified
+**CWE ID:** 541
+**WASC ID:** 34
+**Attack Strength:** DEFAULT
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Source Code Disclosure - Git "
+alertid: 41
+alertindex: 4100
+alerttype: "Active"
+alertcount: 1
+status: beta
+type: alert
+risk: High
+solution: "Ensure that Git metadata files are not deployed to the web server or application server"
+references:
+   - http://projects.webappsec.org/Predictable-Resource-Location
+   - https://cwe.mitre.org/data/definitions/425.html
+other: "Example disclosed data."
+cwe: 541
+wasc: 34
+alerttags: 
+  - OWASP_2017_A06
+  - OWASP_2021_A05
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrulesBeta/src/main/java/org/zaproxy/zap/extension/ascanrulesBeta/SourceCodeDisclosureGitScanRule.java
+linktext: "org/zaproxy/zap/extension/ascanrulesBeta/SourceCodeDisclosureGitScanRule.java"
+---
+The source code for the current page was disclosed by the web server.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

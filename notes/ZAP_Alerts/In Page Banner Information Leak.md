@@ -1,0 +1,41 @@
+
+# In Page Banner Information Leak
+
+**ID:** 10009
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "In Page Banner Information Leak"
+alertid: 10009
+alertindex: 1000900
+alerttype: "Passive"
+alertcount: 1
+status: beta
+type: alert
+risk: Low
+solution: "Configure the server to prevent such information leaks. For example: Under Tomcat this is done via the \"server\" directive and implementation of custom error pages. Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives."
+references:
+   - https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/
+other: "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
+cwe: 200
+wasc: 13
+alerttags: 
+  - OWASP_2017_A06
+  - OWASP_2021_A05
+  - WSTG-v42-INFO-02
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrulesBeta/src/main/java/org/zaproxy/zap/extension/pscanrulesBeta/InPageBannerInfoLeakScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrulesBeta/InPageBannerInfoLeakScanRule.java"
+---
+The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

@@ -1,0 +1,39 @@
+
+# Java Serialization Object
+
+**ID:** 90002
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Java Serialization Object"
+alertid: 90002
+alertindex: 9000200
+alerttype: "Passive"
+alertcount: 1
+status: beta
+type: alert
+risk: Medium
+solution: "Deserialization of untrusted data is inherently dangerous and should be avoided."
+references:
+   - https://www.oracle.com/java/technologies/javase/seccodeguide.html#8
+other: ""
+cwe: 502
+alerttags: 
+  - OWASP_2017_A08
+  - OWASP_2021_A04
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrulesBeta/src/main/java/org/zaproxy/zap/extension/pscanrulesBeta/JsoScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrulesBeta/JsoScanRule.java"
+---
+Java Serialization seems to be in use. If not correctly validated, an attacker can send a specially crafted object. This can lead to a dangerous "Remote Code Execution". A magic sequence identifying JSO has been detected (Base64: rO0AB, Raw: 0xac, 0xed, 0x00, 0x05).
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

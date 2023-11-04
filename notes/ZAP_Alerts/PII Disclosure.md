@@ -1,0 +1,38 @@
+
+# PII Disclosure
+
+**ID:** 10062
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "PII Disclosure"
+alertid: 10062
+alertindex: 1006200
+alerttype: "Passive"
+alertcount: 1
+status: release
+type: alert
+risk: High
+solution: "Check the response for the potential presence of personally identifiable information (PII), ensure nothing sensitive is leaked by the application."
+other: "Credit Card Type detected: Visa Bank Identification Number: 471618 Brand: VISA Category: PURCHASING Issuer: U.S. BANK N.A. ND"
+cwe: 359
+wasc: 13
+alerttags: 
+  - OWASP_2017_A03
+  - OWASP_2021_A04
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrules/src/main/java/org/zaproxy/zap/extension/pscanrules/PiiScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrules/PiiScanRule.java"
+---
+The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

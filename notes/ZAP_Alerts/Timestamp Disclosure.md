@@ -1,0 +1,40 @@
+
+# Timestamp Disclosure
+
+**ID:** 10096
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Timestamp Disclosure"
+alertid: 10096
+alertindex: 1009600
+alerttype: "Passive"
+alertcount: 1
+status: release
+type: alert
+risk: Low
+solution: "Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns."
+references:
+   - http://projects.webappsec.org/w/page/13246936/Information%20Leakage
+other: ""
+cwe: 200
+wasc: 13
+alerttags: 
+  - OWASP_2017_A03
+  - OWASP_2021_A01
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrules/src/main/java/org/zaproxy/zap/extension/pscanrules/TimestampDisclosureScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrules/TimestampDisclosureScanRule.java"
+---
+A timestamp was disclosed by the application/web server
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

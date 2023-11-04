@@ -1,0 +1,22 @@
+
+# XPath Injection
+
+**ID:** 90021
+**Risk Level:** High
+**CWE ID:** 643
+**WASC ID:** 39
+**Attack Strength:** DEFAULT
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+XPath Injection is an attack technique used to exploit applications that construct XPath (XML Path Language) queries from user-supplied input to query or navigate XML documents. It can be used directly by an application to query an XML document, as part of a larger operation such as applying an XSLT transformation to an XML document, or applying an XQuery to an XML document. The syntax of XPath bears some resemblance to an SQL query, and indeed, it is possible to form SQL-like queries on an XML document using XPath.
+
+If an application uses run-time XPath query construction, embedding unsafe user input into the query, it may be possible for the attacker to inject data into the query such that the newly formed query will be parsed in a way differing from the programmer's intention.
+
+## Solution
+Use parameterized XPath queries (e.g. using XQuery). This will help ensure separation between data plane and control plane.  Properly validate user input. Reject data where appropriate, filter where appropriate and escape where appropriate. Make sure input that will be used in XPath queries is safe in that context.
+
+## References
+http://projects.webappsec.org/XPath-Injection
+https://cwe.mitre.org/data/definitions/643.html
+https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrules/src/main/java/org/zaproxy/zap/extension/ascanrules/XpathInjectionScanRule.java

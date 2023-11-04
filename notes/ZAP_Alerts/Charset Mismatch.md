@@ -1,0 +1,40 @@
+
+# Charset Mismatch
+
+**ID:** 90011
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Charset Mismatch"
+alertid: 90011
+alertindex: 9001100
+alerttype: "Passive"
+alertcount: 1
+status: release
+type: alert
+risk: Informational
+solution: "Force UTF-8 for all text content in both the HTTP header and meta tags in HTML or encoding declarations in XML."
+references:
+   - http://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection
+other: ""
+cwe: 436
+wasc: 15
+alerttags: 
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrules/src/main/java/org/zaproxy/zap/extension/pscanrules/CharsetMismatchScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrules/CharsetMismatchScanRule.java"
+---
+This check identifies responses where the HTTP Content-Type header declares a charset different from the charset defined by the body of the HTML or XML. When there's a charset mismatch between the HTTP header and content body Web browsers can be forced into an undesirable content-sniffing mode to determine the content's correct character set.
+
+An attacker could manipulate content on the page to be interpreted in an encoding of their choice. For example, if an attacker can control content at the beginning of the page, they could inject script using UTF-7 encoded text and manipulate some browsers into interpreting that text.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

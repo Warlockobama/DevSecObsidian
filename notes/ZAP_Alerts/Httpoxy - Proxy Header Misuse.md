@@ -1,0 +1,44 @@
+
+# Httpoxy - Proxy Header Misuse
+
+**ID:** 10107
+**Risk Level:** Not specified
+**CWE ID:** 20
+**WASC ID:** 20
+**Attack Strength:** DEFAULT
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Httpoxy - Proxy Header Misuse"
+alertid: 10107
+alertindex: 1010700
+alerttype: "Active"
+alertcount: 1
+status: beta
+type: alert
+risk: High
+solution: "The best immediate mitigation is to block Proxy request headers as early as possible, and before they hit your application."
+references:
+   - https://httpoxy.org/
+other: ""
+cwe: 20
+wasc: 20
+alerttags: 
+  - OWASP_2017_A09
+  - OWASP_2021_A06
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrulesBeta/src/main/java/org/zaproxy/zap/extension/ascanrulesBeta/HttPoxyScanRule.java
+linktext: "org/zaproxy/zap/extension/ascanrulesBeta/HttPoxyScanRule.java"
+---
+The server initiated a proxied request via the proxy specified in the HTTP Proxy header of the request.Httpoxy typically affects code running in CGI or CGI like environments.
+This may allow attackers to:
+* Proxy the outgoing HTTP requests made by the web application
+* Direct the server to open outgoing connections to an address and port of their choosing or
+* Tie up server resources by forcing the vulnerable software to use a malicious proxy
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

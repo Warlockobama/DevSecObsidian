@@ -1,0 +1,40 @@
+
+# Content-Type Header Missing
+
+**ID:** 10019
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Content-Type Header Missing"
+alertid: 10019
+alertindex: 1001900
+alerttype: "Passive"
+alertcount: 1
+status: release
+type: alert
+risk: Informational
+solution: "Ensure each page is setting the specific and appropriate content-type value for the content being delivered."
+references:
+   - http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx
+other: ""
+cwe: 345
+wasc: 12
+alerttags: 
+  - OWASP_2017_A06
+  - OWASP_2021_A05
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrules/src/main/java/org/zaproxy/zap/extension/pscanrules/ContentTypeMissingScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrules/ContentTypeMissingScanRule.java"
+---
+The Content-Type header was either missing or empty.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

@@ -1,0 +1,40 @@
+
+# Directory Browsing
+
+**ID:** 10033
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Directory Browsing"
+alertid: 10033
+alertindex: 1003300
+alerttype: "Passive"
+alertcount: 1
+status: release
+type: alert
+risk: Medium
+solution: "Configure the web server to disable directory browsing."
+references:
+   - https://cwe.mitre.org/data/definitions/548.html
+other: "Web server identified: Apache 2"
+cwe: 548
+wasc: 16
+alerttags: 
+  - OWASP_2017_A06
+  - OWASP_2021_A05
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrules/src/main/java/org/zaproxy/zap/extension/pscanrules/DirectoryBrowsingScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrules/DirectoryBrowsingScanRule.java"
+---
+It is possible to view a listing of the directory contents. Directory listings may reveal hidden scripts, include files, backup source files, etc., which can be accessed to reveal sensitive information.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

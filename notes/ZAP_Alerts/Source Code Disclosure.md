@@ -1,0 +1,40 @@
+
+# Source Code Disclosure
+
+**ID:** 10099
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Source Code Disclosure - PHP"
+alertid: 10099
+alertindex: 1009900
+alerttype: "Passive"
+alertcount: 1
+status: beta
+type: alert
+risk: Medium
+solution: "Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server. "
+references:
+   - https://www.wsj.com/articles/BL-CIOB-2999
+other: ""
+cwe: 540
+wasc: 13
+alerttags: 
+  - OWASP_2017_A06
+  - OWASP_2021_A05
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrulesBeta/src/main/java/org/zaproxy/zap/extension/pscanrulesBeta/SourceCodeDisclosureScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrulesBeta/SourceCodeDisclosureScanRule.java"
+---
+Application Source Code was disclosed by the web server - PHP
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

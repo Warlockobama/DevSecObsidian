@@ -1,0 +1,42 @@
+
+# Buffer Overflow
+
+**ID:** 30001
+**Risk Level:** Not specified
+**CWE ID:** 120
+**WASC ID:** 7
+**Attack Strength:** DEFAULT
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Buffer Overflow"
+alertid: 30001
+alertindex: 3000100
+alerttype: "Active"
+alertcount: 1
+status: release
+type: alert
+risk: Medium
+solution: "Rewrite the background program using proper return length checking.  This will require a recompile of the background executable."
+references:
+   - https://owasp.org/www-community/attacks/Buffer_overflow_attack
+other: "Potential Buffer Overflow.  The script closed the connection and threw a 500 Internal Server Error"
+cwe: 120
+wasc: 7
+techtags: 
+  - Language.C
+alerttags: 
+  - OWASP_2017_A01
+  - OWASP_2021_A03
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrules/src/main/java/org/zaproxy/zap/extension/ascanrules/BufferOverflowScanRule.java
+linktext: "org/zaproxy/zap/extension/ascanrules/BufferOverflowScanRule.java"
+---
+Buffer overflow errors are characterized by the overwriting of memory spaces of the background web process, which should have never been modified intentionally or unintentionally. Overwriting values of the IP (Instruction Pointer), BP (Base Pointer) and other registers causes exceptions, segmentation faults, and other process errors to occur. Usually these errors end execution of the application in an unexpected way. 
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

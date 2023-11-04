@@ -1,0 +1,42 @@
+
+# Server Leaks Information via X-Powered-By HTTP Response Header Field(s)
+
+**ID:** 10037
+**Risk Level:** Not specified
+**CWE ID:** Not specified
+**WASC ID:** Not specified
+**Attack Strength:** Not specified
+**Alert Threshold:** DEFAULT
+
+## Rule Description
+---
+title: "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)"
+alertid: 10037
+alertindex: 1003700
+alerttype: "Passive"
+alertcount: 1
+status: release
+type: alert
+risk: Low
+solution: "Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers."
+references:
+   - http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx
+   - http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html
+other: ""
+cwe: 200
+wasc: 13
+alerttags: 
+  - OWASP_2017_A03
+  - OWASP_2021_A01
+  - WSTG-v42-INFO-08
+code: https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrules/src/main/java/org/zaproxy/zap/extension/pscanrules/XPoweredByHeaderInfoLeakScanRule.java
+linktext: "org/zaproxy/zap/extension/pscanrules/XPoweredByHeaderInfoLeakScanRule.java"
+---
+The web/application server is leaking information via one or more "X-Powered-By" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.
+
+
+## Solution
+No solution provided.
+
+## References
+No references provided.

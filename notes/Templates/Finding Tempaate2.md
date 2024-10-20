@@ -2,7 +2,7 @@
 title: "Name"
 tags: [#owasp-zap, #burpsuite-pro, #high-severity, #medium-severity, #low-severity, #informational-severity, #high-confidence, #medium-confidence, #low-confidence, #informational-confidence]
 date: "{{date}}"
-HEIST ticket: [Link to ticket](https://ticketing-system-url/{{ticket_number}})
+ticket: [Link to ticket](https://ticketing-system-url/{{ticket_number}})
 ---
 
 ## Tool Detected
